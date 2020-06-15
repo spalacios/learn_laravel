@@ -1,0 +1,15 @@
+laravel_app/node_modules
+laravel_app/public/hot
+laravel_app/public/storage
+laravel_app/storage/*.key
+laravel_app/vendor
+laravel_app/.env
+laravel_app/.env.backup
+laravel_app/.phpunit.result.cache
+laravel_app/Homestead.json
+laravel_app/Homestead.yaml
+laravel_app/npm-debug.log
+laravel_app/yarn-error.log
+.idea/
+dumps
+mysql_data
