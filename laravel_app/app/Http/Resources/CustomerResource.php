@@ -21,14 +21,14 @@ class CustomerResource extends JsonResource
                 'id'        => (int) $address->id,
                 'address'   => $address->address,
                 'city'      => $address->city,
-                'state'     =>$address->state,
-                'zip'   => $address->zip
+                'state'     => $address->state,
+                'zip'       => $address->zip
             ];
         }
         return [
-            'id' => (int) $this->id,
-            'name' => $this->name,
-            'lastname' => $this->lastname,
+            'id'        => (int) $this->id,
+            'name'      => $this->name,
+            'lastname'  => $this->lastname,
             'addresses' => $addresses
         ];
     }
