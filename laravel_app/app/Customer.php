@@ -15,4 +15,12 @@ class Customer extends Model
     {
         return $this->hasMany(CustomerAddress::class);
     }
+
+    /**
+     * Get all of the post's comments.
+     */
+    public function attachments()
+    {
+        return $this->morphMany('App\Attachment', 'attachable');
+    }
 }

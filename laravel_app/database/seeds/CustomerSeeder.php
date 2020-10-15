@@ -15,6 +15,10 @@ class CustomerSeeder extends Seeder
             function ($customer){
                 $addresses = factory(\App\CustomerAddress::class, 5)->make();
                 $customer->addresses()->saveMany($addresses);
+
+                $attachments = factory(\App\Attachment::class, 3)->make();
+                /** @var $customer \App\Customer */
+                $customer->attachments()->saveMany($attachments);
             }
         );
     }

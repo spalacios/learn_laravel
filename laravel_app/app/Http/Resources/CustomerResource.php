@@ -15,6 +15,7 @@ class CustomerResource extends JsonResource
     public function toArray($request)
     {
         $addresses = [];
+        $attachments = [];
         foreach ($this->addresses as $address){
             /** @var $address \App\CustomerAddress */
             $addresses[] = [
@@ -25,11 +26,19 @@ class CustomerResource extends JsonResource
                 'zip'       => $address->zip
             ];
         }
+        foreach ($this->attachments as $attachment){
+            $attachments[] = [
+                'id'        => (int) $attachment->id,
+                'path'      => $attachment->path
+            ];
+        }
+
         return [
             'id'        => (int) $this->id,
             'name'      => $this->name,
             'lastname'  => $this->lastname,
-            'addresses' => $addresses
+            'addresses' => $addresses,
+            'attachments' => $attachments
         ];
     }
 }
