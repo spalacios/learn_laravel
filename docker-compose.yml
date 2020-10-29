@@ -35,6 +35,19 @@ services:
             - ./mysql_data:/var/lib/mysql
             - ./dumps:/dumps
 
+    elasticsearch:
+        image: elasticsearch:7.4.1
+        ports:
+            -  "9200:9200"
+            -  "9300:9300"
+        environment:
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+            - "discovery.type=single-node"
+        volumes:
+            - "./data/elasticsearch:/usr/share/elasticsearch/data"
+        networks:
+            - code-network
+
 networks:
     code-network:
         driver: bridge
